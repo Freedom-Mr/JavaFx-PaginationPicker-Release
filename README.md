@@ -1,6 +1,3 @@
-# JavaFx-PaginationPicker-Release
-JavaFx-PaginationPicker Release
-
 # JavaFx-PaginationPicker By WangZhiYou
 - javaFx customizationDate Pagination，support page control！
 - javaFx 自定义时间选择组件 Pagination， javaFx 源代码分页功能较少，该代码组件支持首页、上一页、下一页、尾页、跳转、每页数量等操作，同时展示总数据量！
@@ -35,6 +32,13 @@ JavaFx-PaginationPicker Release
           paginationPicker.setCurrentPage(3);//设置当前选择页码，默认第一页（注意：必须放在所有设置条件之后）。不小于0 并且 不大于总页数
           paginationPicker.setPaginationButtonFontSize(12);//设置分页字体大小，默认10(不小于2)
   
+  
+          //paginationPicker.setLanguage(PaginationLanguage.en);//设置语言
+          //paginationPicker.setPaginationPickerStyle("-fx-background-color:linear-gradient(to bottom, #DEE3E9,#D4D6DA);");//设置分页背景样式
+          //paginationPicker.setPaginationButtonStyle("-fx-background-color: linear-gradient(to bottom, #A5B5C7,#9BAABC); -fx-border-color: #909EAE;");//设置按钮样式
+          //paginationPicker.setPaginationClickButtonStyle("-fx-background-color: linear-gradient(to bottom, #6FD13B,#6FD13B); -fx-border-color: #6FD13B;");//设置选中按钮样式
+
+  
           //监听点击动作事件
           paginationPicker.setOnAction(new EventHandler<ActionEvent>() {
               @Override
@@ -65,18 +69,22 @@ JavaFx-PaginationPicker Release
 
 ## 参数说明
 
-  | 函数   | 说明  | 类型      | 可选值                 | 默认值 |
-  |------|-----|---------|---------------------|-----|
-  | setPageSize | 设置每页显示条目个数 | Integer | 不小于1                | 30  |
-  | setTotal | 设置总条目数量 | Integer | 不小于0                | 0   |
-  | setPageButtonCount | 设置页码按钮的数量，当总页数超过该值时会折叠 | Integer | 大于等于 5 且小于等于 21 的奇数 | 7   |
-  | setCurrentPage | 设置当前选择页码，默认第一页（注意：必须放在所有设置条件之后） | Integer | 不小于0 并且 不大于总页数      | 1   |
-  | getPageSize | 获取每页显示条目个数 | — | —                   | 30  |
-  | getTotal | 获取总条目数量 | — | —                   | 0   |
-  | getPageCount | 获取总页数 | — | —                   | 0   |
-  | getPageButtonCount | 获取页码按钮的数量 | — | —                   | 7   |
-  | getCurrentPage | 获取当前选中页码 | — | —                   | 0   |
-  | setPaginationButtonFontSize | 设置分页字体大小    | Integer | 不小于2               | 10  |
+  | 函数   | 说明                              | 类型                 | 可选值             | 默认值 |
+  |------|---------------------------------|--------------------|-----------------|-----|
+  | setPageSize | 设置每页显示条目个数                      | Integer            | 不小于1            | 30  |
+  | setTotal | 设置总条目数量                         | Integer            | 不小于0            | 0   |
+  | setPageButtonCount | 设置页码按钮的数量，当总页数超过该值时会折叠          | Integer            | 大于等于 5 且小于等于 21 的奇数 | 7   |
+  | setCurrentPage | 设置当前选择页码，默认第一页（注意：必须放在所有设置条件之后） | Integer            | 不小于0 并且 不大于总页数  | 1   |
+  | getPageSize | 获取每页显示条目个数                      | —                  | —               | 30  |
+  | getTotal | 获取总条目数量                         | —                  | —               | 0   |
+  | getPageCount | 获取总页数                           | —                  | —               | 0   |
+  | getPageButtonCount | 获取页码按钮的数量                       | —                  | —               | 7   |
+  | getCurrentPage | 获取当前选中页码                        | —                  | —               | 0   |
+  | setPaginationButtonFontSize | 设置分页字体大小                        | Integer            | 不小于2            | 10  |
+  | setLanguage | 设置语言                      | PaginationLanguage | en cn           | cn  |
+  | setPaginationPickerStyle | 设置控件背景样式                        | String            |                 |   |
+  | setPaginationButtonStyle | 设置按钮样式                        | String             |                 |   |
+  | setPaginationClickButtonStyle | 设置选中按钮样式                        | String            |                 |   |
 
 
 
@@ -84,3 +92,11 @@ JavaFx-PaginationPicker Release
 - 【0.0.1】 2024-03-20
 
   1、【初始化】初始化提交，自定义分页组件，支持 首页、上一页、下一页、尾页、跳转等功能
+
+- 【0.0.2】 2024-05-07
+
+  1、【修复】不断追加数据量时，出现控件卡死bug。
+
+  2、【新增】国际化功能，通过 setLanguage() 函数设置，支持中文和英文
+
+  3、【新增】控件背景样式（setPaginationPickerStyle）、按钮样式（setPaginationButtonStyle）、选中按钮样式（setPaginationClickButtonStyle） 函数
